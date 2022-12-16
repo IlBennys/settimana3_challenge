@@ -101,11 +101,11 @@ const deleteOne = (string, boolean) => {
   if (boolean === true) {
     const inArraySxFirstChar = string.substring(1, 5)
     console.log("STRINGA SENZA LA PRIMA LETTERA:", inArraySxFirstChar)
-    return inArraySxFirstChar
+    return true
   } else if (boolean === false) {
     const inArraySxLastChar = string.substring(0, 4)
     console.log("STRINGA SENZA ULTIMA LETTERA:", inArraySxLastChar)
-    return inArraySxLastChar
+    return false
   }
 }
 console.log(deleteOne("Brave", true))
@@ -125,11 +125,56 @@ console.log(onlyLetters("I have 4 dogs"))
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+console.log("----- ESERCIZIO 6 -----")
+
+const isThisAnEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  )
+}
+
+const validate = () => {
+  const result = "#result"
+  const email = "#email".val()
+  result.text("")
+
+  if (isThisAnEmail(email)) {
+    result.text(email + " is valid :)")
+    result.css("color", "green")
+  } else {
+    result.text(email + " is not valid :(")
+    result.css("color", "red")
+  }
+  return false
+}
+
+console.log(isThisAnEmail("benedetto99@gmail.com"))
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+console.log("----- ESERCIZIO 7 -----")
+const whatDayIsIt = () => {
+  const now = new Date()
 
+  const daysOfTheWeek = [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato",
+  ]
+
+  const dayIndex = now.getDay()
+  console.log(daysOfTheWeek[dayIndex])
+
+  const today = now.getDate()
+  console.log(today)
+  return dayIndex
+}
+console.log(whatDayIsIt())
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -142,10 +187,26 @@ console.log(onlyLetters("I have 4 dogs"))
       values: [3, 3, 4]
   }
 */
+console.log("----- ESERCIZIO 8 -----")
+const rollTheDices = (n) => {
+  let obj = {
+    sum: 0,
+    values: [],
+  }
+  for (let i = 0; i < n; i++) {
+    let risultato = dice(1, 4)
+    obj.values.push(risultato)
+    obj.sum = obj.sum + obj.values[i]
+  }
+  return obj
+}
+//rollTheDices(4)
+console.log(rollTheDices(4))
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+console.log("----- ESERCIZIO 9 -----")
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
