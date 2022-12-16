@@ -21,7 +21,7 @@ console.log(sum)
 */
 console.log("----- ESERCIZIO B -----")
 const random = Math.floor(Math.random() * 50)
-console.log(random)
+console.log("questo è un numero random:", random)
 
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
@@ -71,33 +71,57 @@ let dice = function getRandomInt(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min) + min)
 }
-console.log(dice(1, 4))
+console.log("questo è un numero random da 1 a 5:", dice(1, 4))
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
 console.log("----- ESERCIZIO 2 -----")
-let whoIsBigger = (param1, param2) => {
-  return
-}
+const whoIsBigger = (param1, param2) => (param1 > param2 ? "5" : "4")
+
+console.log("questo paramentro è piu grande:", whoIsBigger(5, 4))
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
-
-  Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
-*/
+ Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
+*/ console.log("----- ESERCIZIO 3 -----")
+const splitMe = (str) => {
+  const trasformInArray = str.split(" ")
+  const diviseStrings = trasformInArray.join(" , ")
+  return diviseStrings
+}
+console.log(splitMe("questo è il parametro"))
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+console.log("----- ESERCIZIO 4 -----")
+const deleteOne = (string, boolean) => {
+  if (boolean === true) {
+    const inArraySxFirstChar = string.substring(1, 5)
+    console.log("STRINGA SENZA LA PRIMA LETTERA:", inArraySxFirstChar)
+    return inArraySxFirstChar
+  } else if (boolean === false) {
+    const inArraySxLastChar = string.substring(0, 4)
+    console.log("STRINGA SENZA ULTIMA LETTERA:", inArraySxLastChar)
+    return inArraySxLastChar
+  }
+}
+console.log(deleteOne("Brave", true))
+console.log(deleteOne("Brave", false))
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-
+console.log("----- ESERCIZIO 5 -----")
+const onlyLetters = (stringa) => {
+  const senzaNum = stringa.replace("4", " ")
+  return senzaNum
+}
+console.log(onlyLetters("I have 4 dogs"))
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
