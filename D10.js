@@ -423,52 +423,84 @@ console.log(searchByTitle("Avengers: Endgame"))
  "match" deve includere tutti i film dell'array "movies" che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
  */
 console.log("----- ESERCIZIO 18 -----")
-let match = []
-let unmatch = []
-const searchAndDivide = (stringa) => {
-  const tuttiTitoli = movies.map((elem) => elem.Title)
-  if (tuttiTitoli.includes(stringa) === true) {
-    tuttiTitoli.push(match)
-  } else if (tuttiTitoli.includes(stringa) !== true) {
-    tuttiTitoli.push(unmatch)
-  }
-
-  return match, unmatch
-}
-console.log(searchAndDivide("The Lords of Salem"))
+// const searchAndDivide = (elem, stringa) => {
+//   let match = []
+//   let unmatch = []
+//   const tuttiTitoli = movies.map((elem) => elem.Title)
+//   if (tuttiTitoli.includes(stringa)) {
+//     match.push(stringa)
+//   } else if (tuttiTitoli.includes(stringa)) {
+//     unmatch.push(tuttiTitoli)
+//   }
+//   return match, unmatch
+// }
+// console.log(searchAndDivide(movies, "The Lords of Salem"))
 /* ESERCIZIO 19
 Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+console.log("----- ESERCIZIO 19 -----")
 
-// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
+console.log(
+  "DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)"
+)
 
 /* ESERCIZIO 20
 Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
-
+console.log("- ---- ESERCIZIO 20 -----")
+const selectId = () => document.querySelector("#container")
+console.log(selectId())
 /* ESERCIZIO 21
 Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-
+console.log("- ---- ESERCIZIO 21 -----")
+const selectTD = () => document.querySelectorAll("td")
+console.log(selectTD())
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
   */
+console.log("- ---- ESERCIZIO 22 -----")
+const contentTD = () => {
+  let td = document.querySelectorAll("td")
+  for (let i = 0; i < td.length; i++) {
+    const element = td[i].value
+    return element
+  }
+}
+console.log(contentTD())
 
 /* ESERCIZIO 23
  Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
- */
-
+ */ console.log("- ---- ESERCIZIO 22 -----")
+const addBackCol = () => {
+  let add = document.querySelectorAll("link")
+  add.forEach((add) => (add.style.backgroundColor = "aqua"))
+}
+console.log(addBackCol())
 /* ESERCIZIO 24
 Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+console.log("- ---- ESERCIZIO 24 -----")
+const addNewElem = () => {
+  let miaLista = document.querySelector("#myList")
+  const nuovoLi = `   <li>    ${imputHtml.value}    </li> `
+  miaLista.innerHTML += nuovoLi
+}
+console.log(addNewElem())
 
 /* ESERCIZIO 25
 Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-
+console.log("- ---- ESERCIZIO 25 -----")
+const svuotare = (e) => {
+  let miaLista = document.querySelector("#myList")
+  miaLista.remove
+}
+console.log(svuotare())
 /* ESERCIZIO 26
 Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+console.log("- ---- ESERCIZIO 26 -----")
 
 // [EXTRA] JS Avanzato
 
