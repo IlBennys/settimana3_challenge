@@ -501,7 +501,13 @@ console.log(svuotare())
 Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log("- ---- ESERCIZIO 26 -----")
-
+const addClass = () => {
+  let tr = document.querySelectorAll("tr")
+  tr.forEach((element) => {
+    tr.addClassList.add("test")
+  })
+}
+console.log(addClass())
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
